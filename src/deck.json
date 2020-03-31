@@ -256,21 +256,21 @@
     "number": "valet",
     "color": "noir",
     "sign": "pique",
-    "png": "JD.png"
+    "png": "JS.png"
   },
   {
     "id": "39",
     "number": "dame",
     "color": "noir",
     "sign": "pique",
-    "png": "QD.png"
+    "png": "QS.png"
   },
   {
     "id": "40",
     "number": "roi",
     "color": "noir",
     "sign": "pique",
-    "png": "KD.png"
+    "png": "KS.png"
   },
   {
     "id": "41",
