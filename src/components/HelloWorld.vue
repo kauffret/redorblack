@@ -31,6 +31,7 @@ export default {
     return {
       deck: Deck,
       card: "",
+      round: 0,
       persons: [
         {
           id: 0,
@@ -56,7 +57,17 @@ export default {
       return this.card;
     },
     pickACard: function() {
-      this.pick();
+      this.persons[this.round].cards.push(this.card);
+      if (this.round + 1 === this.persons.length) {
+        this.persons[this.round].status = "En attente";
+        this.round = 0;
+        this.persons[this.round].status = "Joue";
+      } else {
+        this.persons[this.round].status = "En attente";
+        this.round++;
+        this.persons[this.round].status = "Joue";
+      }
+      console.log(this.round);
     },
     getImgUrl(imageName) {
       console.log(imageName);
