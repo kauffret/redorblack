@@ -13,7 +13,7 @@
 </template>
 
 <script>
-import Deck from "./../data.json";
+import Deck from "./../deck.json";
 export default {
   name: "HelloWorld",
   props: {
