@@ -21,6 +21,7 @@
 </template>
 
 <script>
+/* eslint-disable */
 import Deck from "./../deck.json";
 export default {
   name: "HelloWorld",
@@ -51,22 +52,21 @@ export default {
   methods: {
     pick: function() {
       var chosenNumber = Math.floor(Math.random() * this.deck.length);
-      this.card = this.deck[chosenNumber];
-      console.log(this.persons);
-      console.log(this.card);
+      this.card = this.deck[chosenNumber]; // pick the card in the deck
+      this.deck.splice(chosenNumber, 1); // remove the card in the deck
       return this.card;
     },
     pickACard: function() {
+      console.log(this.persons);
+      this.pick();
       this.persons[this.round].cards.push(this.card);
+      this.persons[this.round].status = "En attente";
       if (this.round + 1 === this.persons.length) {
-        this.persons[this.round].status = "En attente";
         this.round = 0;
-        this.persons[this.round].status = "Joue";
       } else {
-        this.persons[this.round].status = "En attente";
         this.round++;
-        this.persons[this.round].status = "Joue";
       }
+      this.persons[this.round].status = "Joue";
       console.log(this.round);
     },
     getImgUrl(imageName) {
